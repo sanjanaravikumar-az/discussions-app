@@ -12,7 +12,17 @@
     "configure-functions": "./configure-functions.sh"
   },
   "devDependencies": {
-    "vite": "^7.2.2"
+    "vite": "^7.2.2",
+    "@aws-amplify/backend": "^1.18.0",
+    "@aws-amplify/backend-cli": "^1.8.0",
+    "@aws-amplify/backend-data": "^1.6.2",
+    "aws-cdk": "^2",
+    "aws-cdk-lib": "^2",
+    "ci-info": "^4.3.1",
+    "constructs": "^10.0.0",
+    "esbuild": "^0.27.0",
+    "tsx": "^4.20.6",
+    "@types/node": "*"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.936.0",
