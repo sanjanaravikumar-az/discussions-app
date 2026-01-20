@@ -15,7 +15,7 @@ const backend = defineBackend({
     recorduseractivity
 });
 const storageStack = backend.createStack("storage");
-const activity = new Table(storageStack, "activity", { partitionKey: { name: "id", type: AttributeType.STRING }, billingMode: BillingMode.PROVISIONED, readCapacity: 5, writeCapacity: 5, stream: StreamViewType.NEW_IMAGE, sortKey: { name: "userId", type: AttributeType.STRING } });
+const activity = new Table(storageStack, "activity", { tableName: "activity-main", partitionKey: { name: "id", type: AttributeType.STRING }, billingMode: BillingMode.PROVISIONED, readCapacity: 5, writeCapacity: 5, stream: StreamViewType.NEW_IMAGE, sortKey: { name: "userId", type: AttributeType.STRING } });
 activity.addGlobalSecondaryIndex({ indexName: "byUserId", partitionKey: { name: "userId", type: AttributeType.STRING }, sortKey: { name: "timestamp", type: AttributeType.STRING }, readCapacity: 5, writeCapacity: 5 });
 const cfnUserPool = backend.auth.resources.cfnResources.cfnUserPool;
 cfnUserPool.usernameAttributes = ["phone_number"];
